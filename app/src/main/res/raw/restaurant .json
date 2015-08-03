@@ -1,0 +1,259 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "Рис",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "100 р."
+        },
+        {
+            "id": 2,
+            "name": "Мама Пицца",
+            "photos": [
+                {
+                    "original": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQNY5QM1dryUQIjGcxElIWi36Lt_nnWVafRmHOdyKNq105fguxe",
+                    "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQNY5QM1dryUQIjGcxElIWi36Lt_nnWVafRmHOdyKNq105fguxe"
+                },
+                {
+                    "original": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSzRwOtuV807jj5hL1ePE8d8rI6Pt1xrGjENv6YEW5vUfG3lZlP",
+                    "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSzRwOtuV807jj5hL1ePE8d8rI6Pt1xrGjENv6YEW5vUfG3lZlP"
+                }
+            ],
+            "price": "150 р."
+        },
+        {
+            "id": 3,
+            "name": "Мама Пицца",
+            "photos": [
+                {
+                    "original": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxbQ66bJQIqEE8tlzWXj5NMVaeUVY6fIKSEL9DS01WE5YqOzZn",
+                    "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxbQ66bJQIqEE8tlzWXj5NMVaeUVY6fIKSEL9DS01WE5YqOzZn"
+                },
+                {
+                    "original": "http://goldenapplehotel.ru/images/editor/int_1183013204.jpg",
+                    "thumb": "http://goldenapplehotel.ru/images/editor/int_1183013204.jpg"
+                }
+            ],
+            "price": "150 р."
+        },
+        {
+            "id": 4,
+            "name": "Белый слон",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                }
+            ],
+            "price": "250 р."
+        },
+        {
+            "id": 5,
+            "name": "Мама Пицца",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                }
+            ],
+            "price": "50 р."
+        },
+        {
+            "id": 6,
+            "name": "Mozzart",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "1550 р."
+        },
+        {
+            "id": 7,
+            "name": "Силла",
+            "photos": [
+                {
+                    "original": "http: //www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http: //deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "1250 р."
+        },
+        {
+            "id": 8,
+            "name": "Ташир",
+            "photos": [
+                {
+                    "original": "http: //www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "3150 р."
+        },
+        {
+            "id": 9,
+            "name": "Донская чаша",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "1500 р."
+        },
+        {
+            "id": 10,
+            "name": "Лазария",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "1000 р."
+        },
+        {
+            "id": 11,
+            "name": "Фартук",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "1350 р."
+        },
+        {
+            "id": 12,
+            "name": "Пинта",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "150 р."
+        },
+        {
+            "id": 13,
+            "name": "Добрый Эль",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "120 р."
+        },
+        {
+            "id": 14,
+            "name": "Пить кофе",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "400 р."
+        },
+        {
+            "id": 15,
+            "name": "Пироги Кучкова",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "150 р."
+        },
+        {
+            "id": 16,
+            "name": "New York",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "180 р."
+        },
+        {
+            "id": 17,
+            "name": "Mojo",
+            "photos": [
+                {
+                    "original": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg",
+                    "thumb": "http://www.povarenok.ru/data/cache/2013jan/24/10/68528_85927-150x150x.jpg"
+                },
+                {
+                    "original": "http://deita.ru/upload/iblock/485/restoran.jpg",
+                    "thumb": "http://deita.ru/upload/iblock/485/restoran.jpg"
+                }
+            ],
+            "price": "15 р."
+        }
+    ]
+}
