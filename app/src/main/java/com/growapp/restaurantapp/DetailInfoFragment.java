@@ -192,7 +192,7 @@ public class DetailInfoFragment extends Fragment {
                 TextView textView = (TextView) rootView.findViewById(R.id.textView_price);
                 textView.setText(tmpString);
 
-                final String tel = "+79515340384";
+                final String tel = "+71234567899";
                 textView = (TextView) rootView.findViewById(R.id.number_telephone);
                 textView.setText(tel);
 
