@@ -1,5 +1,10 @@
 package com.growapp.restaurantapp;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
@@ -8,8 +13,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -29,7 +36,8 @@ import java.net.URL;
 public class MainActivityFragment extends Fragment {
 
     private ArrayAdapter<String> mForecastAdapter;
-
+    //private SQLiteDatabase database;
+    private RestaurantDBAdapter mDBAdapter;
 
     public MainActivityFragment() {
     }
@@ -51,108 +59,118 @@ public class MainActivityFragment extends Fragment {
         ListView listView = (ListView) view.findViewById(R.id.listview_restaurant);
         listView.setAdapter(mForecastAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), DetailInfo.class);
+
+                String name = ((TextView) view).getText().toString();
+                intent.putExtra(Constants.TAG_RESTAURANT_ID, name);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
+
 
     public class FetchRestaurantTask extends AsyncTask<Void, Void, String[]>{
 
         private  final String LOG_TAG = FetchRestaurantTask.class.getSimpleName();
 
-        private final String Restaurant_BASE_URL =
-                "https://www.dropbox.com/s/q9qgyyetg7zev9m/restaurant.json";
-        private final String QUERY_PARAM = "dll";
-        private final String QUERY_VALUE = "1";
-
         private String[] getRestaurantDataFromJson(String restaurantJsonStr)
                 throws JSONException {
             final String RESTAURANT_ARRAY = "items";
-
+            final String RESTAURANT_ID = "id";
             final String RESTAURANT_NAME = "name";
+            final String RESTAURANT_PRICE = "price";
+            final String RESTAURANT_PHOTOS = "photos";
+            final String RESTAURANT_PHOTOS_ORIGINAL = "original";
+            final String RESTAURANT_PHOTOS_THUMB = "thumb";
 
 
-            JSONObject forecastJson = new JSONObject(restaurantJsonStr);
-            JSONArray restaurantJSONArray = forecastJson.getJSONArray(RESTAURANT_ARRAY);
+            JSONObject restaurants = new JSONObject(restaurantJsonStr);
+            JSONArray restaurantJSONArray = restaurants.getJSONArray(RESTAURANT_ARRAY);
 
             String[] resultString = new String[restaurantJSONArray.length()];
+
+
 
             for (int i=0; i<restaurantJSONArray.length(); ++i){
                 JSONObject restaurantObject = restaurantJSONArray.getJSONObject(i);
 
+                int id = restaurantObject.getInt(RESTAURANT_ID);
                 resultString[i] = restaurantObject.getString(RESTAURANT_NAME);
+                String price = restaurantObject.getString(RESTAURANT_PRICE);
+
+                mDBAdapter.createTableRestaurantItem(id, resultString[i], price);
+
+                JSONArray photosJSONArray = restaurantObject.getJSONArray(RESTAURANT_PHOTOS);
+                for (int j=0; j < photosJSONArray.length(); ++i){
+                    JSONObject photosObject = photosJSONArray.getJSONObject(i);
+
+                    String original = photosObject.getString(RESTAURANT_PHOTOS_ORIGINAL);
+                    String thumb = photosObject.getString(RESTAURANT_PHOTOS_THUMB);
+
+                    mDBAdapter.createTablePhotosItem(original, thumb, id);
+                }
+
             }
 
             return resultString;
         }
 
-        @Override
-        protected String[] doInBackground(Void... params) {
+        String getStringFromAssetFile()
+        {
+            AssetManager am = getActivity().getAssets();
 
-            HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
-
-            String restaurantJsonString;
+            InputStream inputStream = null;
+            String data;
 
             try {
-                Uri builtUri = Uri.parse(Restaurant_BASE_URL).buildUpon()
-                    .appendQueryParameter(QUERY_PARAM, QUERY_VALUE).build();
 
-                String jsonUrl = builtUri.toString();
-
-                //Log.d(LOG_TAG, "jsonUrl = " + jsonUrl);
-
-                URL url = new URL(jsonUrl);
-
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.connect();
-
-                InputStream inputStream = urlConnection.getInputStream();
+                inputStream = am.open("restaurant.json");
                 StringBuilder buffer = new StringBuilder();
-
-                if (inputStream == null) {
-
-                    Toast.makeText(getActivity(), R.string.toast_error_input_data,
-                            Toast.LENGTH_LONG).show();
-
-                    return null;
-                }
-
                 reader = new BufferedReader(new InputStreamReader(inputStream));
 
                 String line;
-                while ((line = reader.readLine()) != null){
+                while ((line = reader.readLine()) != null) {
                     buffer.append(line + "\n");
                 }
 
-                restaurantJsonString = buffer.toString();
+                data = buffer.toString();
 
-                Log.d(LOG_TAG,"JSON string = " + restaurantJsonString);
-
+                return data;
 
             } catch (IOException e) {
-                Log.e(LOG_TAG, "Error ", e);
-
-                return null;
-
-            } finally {
-                if (urlConnection != null){
-                    urlConnection.disconnect();
-                }
-                if (reader != null) {
+                Log.d(LOG_TAG, "Невозможно прочитать restaurant.json");
+                e.printStackTrace();
+            }
+            finally {
+                if (inputStream != null){
                     try {
-                        reader.close();
-                    } catch (final IOException e) {
-                        Log.e(LOG_TAG, "Error closing stream", e);
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
-            }
-            /*try {
-                return getRestaurantDataFromJson(restaurantJsonString);
-            } catch (JSONException e) {
-                Log.e(LOG_TAG, e.getMessage(), e);
-                e.printStackTrace();
-            }*/
 
+            }
+            return null;
+        }
+
+        @Override
+        protected String[] doInBackground(Void... params) {
+
+            mDBAdapter = new RestaurantDBAdapter(getActivity());
+
+            String test = getStringFromAssetFile();
+            try {
+                return getRestaurantDataFromJson(test);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             return null;
         }
 

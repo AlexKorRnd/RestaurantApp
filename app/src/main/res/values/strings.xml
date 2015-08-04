@@ -5,4 +5,5 @@
 
     <string name="toast_error_input_data">Ошибка! Невозможно загрузить данные.
         Проверьте соединение с интернетом</string>
+    <string name="title_activity_detail_info">DetailInfo</string>
 </resources>
